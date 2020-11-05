@@ -15,7 +15,15 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo_msgs
 )
 
-find_package(Lua REQUIRED)
+# find_package(Lua REQUIRED)
+
+set(LUA_INCLUDE_DIR /usr/local/include)
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".a;.so")
+set(LUA_VERSION_STRING "5.4.1")
+find_package(Lua 5.4)
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".so")
+
+
 find_package(Eigen3 REQUIRED)
 
 #link_directories("/usr/local/lib")
